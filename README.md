@@ -1,9 +1,9 @@
-🏡 ListingsIndia 
+🏡 ListingsIndia :
  A modern, full-stack accommodation booking platform inspired by Airbnb, built with the MERN stack.
 
 </div>
 
-🎯 About
+🎯 About :
 ListingsIndia is a comprehensive accommodation booking platform that allows users to discover, book, and review properties across India. Built with modern web technologies, it provides a seamless experience for both property owners and travelers.
 Why ListingsIndia?
 
