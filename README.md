@@ -1,210 +1,412 @@
-🏡 ListingsIndia :
- A modern, full-stack accommodation booking platform inspired by Airbnb, built with the MERN stack.
+# 🏠 ListingsIndia
 
-</div>
-
-🎯 About :
-ListingsIndia is a comprehensive accommodation booking platform that allows users to discover, book, and review properties across India. Built with modern web technologies, it provides a seamless experience for both property owners and travelers.
-</div>
-Why ListingsIndia?
-
-🔐 Secure Authentication - Industry-standard user authentication and authorization
-🏠 Property Management - Easy-to-use interface for listing properties
-📅 Smart Booking System - Intuitive date selection with price calculation
-⭐ Reviews & Ratings - Community-driven property reviews
-❤️ Favorites - Save properties for later viewing
-📱 Responsive Design - Works seamlessly on all devices
-</div>
-
-✨ Features
-</div>
-🎨 User Experience
-
-✅ Clean, modern Material-UI interface
-✅ Responsive design (mobile, tablet, desktop)
-✅ Real-time form validation
-✅ Loading states and error handling
-✅ Intuitive navigation and filtering
-</div>
-🔒 Authentication & Security
-</div>
-✅ User registration and login
-✅ Password hashing with bcrypt
-✅ Session-based authentication
-✅ Protected routes and API endpoints
-✅ Owner-only edit/delete permissions
-</div>
-🏠 Listings Management
-
-✅ Create, read, update, delete (CRUD) operations
-✅ Image upload to Cloudinary
-✅ Search and filter functionality
-✅ Category-based filtering (trending, mountains, pools, etc.)
-✅ Price display with tax toggle
-</div>
-📅 Booking System
-
-✅ Date range picker with validation
-✅ Guest count specification
-✅ Automatic price calculation (base + service fee + GST)
-✅ Booking history
-✅ Cancel bookings
-</div>
-⭐ Reviews & Ratings
-
-✅ 5-star rating system
-✅ Text comments
-✅ Author attribution
-✅ Delete own reviews
-</div>
-
-❤️ Favorites
-</div>
-✅ Add/remove properties to favorites
-✅ Favorites page with all saved listings
-✅ Badge counter in navigation
-
-🛠 Tech Stack
-</div>
-Backend
-
-Node.js v24.2.0 - JavaScript runtime
-Express.js v4.21.2 - Web application framework
-MongoDB - NoSQL database
-Mongoose v8.16.0 - MongoDB ODM
-Passport.js - Authentication middleware
-Cloudinary - Cloud-based image storage
-Multer - File upload handling
-Joi - Schema validation
-</div>
-Frontend
-
-React 19.2.0 - UI library
-Vite 7.1.9 - Build tool
-Material-UI (MUI) v7.3.4 - Component library
-React Router v7.9.3 - Client-side routing
-Axios - HTTP client
-Day.js - Date manipulation
-</div>
-Additional Tools
-
-CORS - Cross-origin resource sharing
-Express Session - Session management
-Connect-Mongo - MongoDB session store
+**A full-stack vacation rental platform inspired by Airbnb, built with the MERN stack**
 
 
-📖 Usage
-For Travelers
+---
 
-Browse Listings - Explore properties on the homepage
-Search & Filter - Use category filters to find specific types
-View Details - Click on any listing for full information
-Sign Up/Login - Create an account to book properties
-Make Booking - Select dates, guests, and confirm
-Add Reviews - Share your experience after booking
-Save Favorites - Heart icon to save properties
+## 📋 Table of Contents
 
-For Property Owners
+- [Overview](#overview)
+- [Features](#features)
+- [Tech Stack](#tech-stack)
+- [Project Architecture](#project-architecture)
+- [Installation](#installation)
+- [Environment Variables](#environment-variables)
+- [Usage](#usage)
+- [API Endpoints](#api-endpoints)
+- [Database Schema](#database-schema)
+- [Screenshots](#screenshots)
+- [Future Enhancements](#future-enhancements)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
 
-Create Account - Sign up as a user
-Add Listing - Click "Create New Listing" in navigation
-Upload Details - Add title, description, price, location, and image
-Manage Properties - Edit or delete your listings
-View Bookings - See who has booked your properties
+---
 
+## 🎯 Overview
 
-📁 Project Structure
-listingsindia/
-│
-├── client/                      # React Frontend
-│   ├── public/
-│   ├── src/
-│   │   ├── components/
-│   │   │   ├── bookings/       # Booking components
-│   │   │   ├── layout/         # Navbar, Footer
-│   │   │   ├── listings/       # Listing cards, filters
-│   │   │   └── reviews/        # Review section
-│   │   ├── context/
-│   │   │   ├── AuthContext.jsx # Authentication state
-│   │   │   └── Favorite.jsx    # Favorites state
-│   │   ├── pages/
-│   │   │   ├── Listings.jsx    # Browse listings
-│   │   │   ├── ListingDetail.jsx
-│   │   │   ├── ListingForm.jsx
-│   │   │   ├── Login.jsx
-│   │   │   ├── Signup.jsx
-│   │   │   ├── Favorites.jsx
-│   │   │   └── Booking.jsx
-│   │   ├── services/
-│   │   │   └── api.js          # Axios configuration
-│   │   ├── App.jsx
-│   │   └── main.jsx
-│   └── package.json
-│
-├── server/                      # Express Backend
-│   ├── controller/
-│   │   ├── listing.js          # Listing controllers
-│   │   ├── review.js           # Review controllers
-│   │   └── user.js             # User controllers
-│   ├── models/
-│   │   ├── listing.js          # Listing schema
-│   │   ├── review.js           # Review schema
-│   │   ├── user.js             # User schema
-│   │   ├── favorite.js         # Favorite schema
-│   │   └── booking.js          # Booking schema
-│   ├── routes/
-│   │   ├── listing.js          # Listing routes
-│   │   ├── review.js           # Review routes
-│   │   ├── user.js             # Auth routes
-│   │   ├── favorite.js         # Favorite routes
-│   │   └── booking.js          # Booking routes
-│   ├── seed/
-│   │   └── seedlisting.js      # Database seeder
-│   ├── utils/
-│   │   ├── expresserror.js     # Custom error class
-│   │   └── wrapasync.js        # Async wrapper
-│   ├── cloudinary.js           # Cloudinary config
-│   ├── middleware.js           # Custom middleware
-│   ├── schema.js               # Joi validation
-│   └── index.js                # Server entry point
-│
-├── .env                         # Environment variables
+**ListingsIndia** is a vacation rental marketplace platform where users can:
+- Browse property listings across India
+- Create and manage their own rental listings
+- Leave reviews and ratings for properties
+- Securely authenticate and manage their profile
+
+This project demonstrates full-stack development proficiency with user authentication, CRUD operations, image uploads, and cloud integration.
+
+---
+
+## ✨ Features
+
+### 🔐 Authentication & Authorization
+- User registration and login with Passport.js
+- Session-based authentication with MongoDB store
+- Password hashing and salting with `passport-local-mongoose`
+- Protected routes with custom middleware
+
+### 🏡 Listing Management (CRUD)
+- **Create**: Add new property listings with images
+- **Read**: Browse all listings or view individual property details
+- **Update**: Edit your own listings (owner-only access)
+- **Delete**: Remove listings with cascade deletion of reviews
+
+### ⭐ Review System
+- Leave ratings (1-5 stars) and comments
+- Visual star rating interface
+- Author tracking for reviews
+- Delete reviews (author-only access)
+
+### 📸 Image Upload
+- Cloudinary integration for image storage
+- Multer middleware for file handling
+- Image transformation (blur effect for edit preview)
+- CDN delivery for fast loading
+
+### 🎨 User Interface
+- Responsive Bootstrap design
+- Filter system for property types
+- Tax toggle (GST calculation display)
+- Flash messages for user feedback
+- Custom error pages
+
+### 🔒 Security Features
+- Password encryption
+- HTTP-only session cookies
+- Input validation (client & server-side)
+- Authorization checks before modifications
+- Protected environment variables
+
+---
+
+## 🛠️ Tech Stack
+
+### Frontend
+- **Template Engine**: EJS (Embedded JavaScript)
+- **CSS Framework**: Bootstrap 5.3
+- **Icons**: Font Awesome 6.7
+- **Styling**: Custom CSS
+
+### Backend
+- **Runtime**: Node.js 24.2.0
+- **Framework**: Express.js 4.21.2
+- **Authentication**: Passport.js (Local Strategy)
+- **Session Management**: Express-session with Connect-Mongo
+
+### Database
+- **Database**: MongoDB Atlas
+- **ODM**: Mongoose 8.16.0
+
+### Cloud Services
+- **Image Storage**: Cloudinary
+- **File Upload**: Multer 2.0.1
+
+### Validation
+- **Server-side**: Joi 17.13.3
+- **Client-side**: Bootstrap validation
+
+---
+
+## 🏗️ Project Architecture
+
+```
+ListingsIndia/
+├── client/                  # Frontend assets
+│   └── public/
+│       ├── css/
+│       │   ├── style.css
+│       │   └── rating.css
+│       └── js/
+│           └── script.js
+├── server/
+│   ├── models/             # Mongoose schemas
+│   │   ├── listing.js
+│   │   ├── review.js
+│   │   └── user.js
+│   ├── controllers/        # Route handlers
+│   │   ├── listing.js
+│   │   ├── review.js
+│   │   └── user.js
+│   ├── routes/             # Express routes
+│   │   ├── listing.js
+│   │   ├── review.js
+│   │   └── user.js
+│   ├── views/              # EJS templates
+│   │   ├── layouts/
+│   │   ├── includes/
+│   │   ├── listings/
+│   │   └── user/
+│   ├── utils/              # Helper functions
+│   │   ├── wrapasync.js
+│   │   └── expresserror.js
+│   ├── middleware.js       # Custom middleware
+│   ├── cloudinary.js       # Cloudinary config
+│   ├── schema.js           # Joi validation
+│   └── index.js            # Entry point
 ├── .gitignore
+├── .env                    # Environment variables
 ├── package.json
 └── README.md
+```
+
+**MVC Architecture**:
+- **Models**: Define data structure (MongoDB schemas)
+- **Views**: EJS templates for UI rendering
+- **Controllers**: Business logic for route handling
+
+---
+
+## 📥 Installation
+
+### Prerequisites
+- Node.js (v24.2.0 or higher)
+- MongoDB Atlas account
+- Cloudinary account
+- Git
+
+### Steps
+
+1. **Clone the repository**
+```bash
+git clone https://github.com/Saurav9463/ListingsIndia---Major-Project.git
+cd ListingsIndia---Major-Project
+```
+
+2. **Install dependencies**
+```bash
+npm install
+```
+
+3. **Set up environment variables**
+
+Create a `.env` file in the root directory:
+
+```env
+# MongoDB Atlas Connection
+ATLASDB_URL=your_mongodb_connection_string
+
+# Cloudinary Configuration
+CLOUD_NAME=your_cloudinary_cloud_name
+API_KEY=your_cloudinary_api_key
+API_SECRET=your_cloudinary_api_secret
+
+# Session Secret
+SECRET=your_secret_key_for_sessions
+
+# Node Environment
+NODE_ENV=development
+```
+
+4. **Initialize database** (optional)
+```bash
+node init/app.js
+```
+This will populate the database with sample listings.
+
+5. **Start the application**
+```bash
+npm start
+# or for development with auto-restart
+npm run dev
+```
+
+6. **Access the application**
+
+Open your browser and navigate to:
+```
+http://localhost:8080
+```
+
+---
+
+## 🔑 Environment Variables
+
+| Variable | Description | Example |
+|----------|-------------|---------|
+| `ATLASDB_URL` | MongoDB Atlas connection string | `mongodb+srv://user:pass@cluster.mongodb.net/` |
+| `CLOUD_NAME` | Cloudinary cloud name | `your-cloud-name` |
+| `API_KEY` | Cloudinary API key | `123456789012345` |
+| `API_SECRET` | Cloudinary API secret | `abcdefghijklmnopqrstuvwxyz` |
+| `SECRET` | Session encryption key | `supersecretkey123` |
+| `NODE_ENV` | Environment mode | `development` or `production` |
+
+---
+
+## 🚀 Usage
+
+### User Flows
+
+#### 1. **Browse Listings**
+- Visit homepage to see all available properties
+- Click on any listing to view details
+- Toggle "Display total after taxes" to see GST calculation
+
+#### 2. **Create Account**
+- Click "Sign up" in navigation
+- Fill registration form (username, email, password)
+- Automatic login after registration
+
+#### 3. **Add a Listing**
+- Login to your account
+- Click "Create New Listing"
+- Fill in property details and upload image
+- Submit to publish
+
+#### 4. **Edit Your Listing**
+- Navigate to your listing
+- Click "Edit" button (only visible to owner)
+- Modify details or replace image
+- Save changes
+
+#### 5. **Leave a Review**
+- View any listing detail page
+- Scroll to review section
+- Select star rating and add comment
+- Submit review (requires login)
+
+#### 6. **Search Properties**
+- Use search bar in navigation
+- Enter destination or keywords
+- View filtered results
+
+---
+
+## 🛣️ API Endpoints
+
+### Authentication Routes
+| Method | Endpoint | Description | Auth Required |
+|--------|----------|-------------|---------------|
+| GET | `/signup` | Render signup form | No |
+| POST | `/signup` | Create new user | No |
+| GET | `/login` | Render login form | No |
+| POST | `/login` | Authenticate user | No |
+| GET | `/logout` | End user session | Yes |
+
+### Listing Routes
+| Method | Endpoint | Description | Auth Required |
+|--------|----------|-------------|---------------|
+| GET | `/listings` | Get all listings | No |
+| GET | `/listings/new` | Render create form | Yes |
+| POST | `/listings` | Create new listing | Yes |
+| GET | `/listings/:id` | Get single listing | No |
+| GET | `/listings/:id/edit` | Render edit form | Yes (Owner) |
+| PUT | `/listings/:id` | Update listing | Yes (Owner) |
+| DELETE | `/listings/:id` | Delete listing | Yes (Owner) |
+
+### Review Routes
+| Method | Endpoint | Description | Auth Required |
+|--------|----------|-------------|---------------|
+| POST | `/listings/:id/reviews` | Create review | Yes |
+| DELETE | `/listings/:id/reviews/:reviewId` | Delete review | Yes (Author) |
+
+---
+
+## 🗄️ Database Schema
+
+### User Model
+```javascript
+{
+  username: String (unique, required),
+  email: String (unique, required),
+  password: String (hashed, handled by passport)
+}
+```
+
+### Listing Model
+```javascript
+{
+  title: String (required),
+  description: String,
+  image: {
+    url: String,
+    filename: String
+  },
+  price: Number,
+  location: String,
+  country: String,
+  review: [ObjectId] (ref: Review),
+  owner: ObjectId (ref: User)
+}
+```
+
+### Review Model
+```javascript
+{
+  comment: String,
+  rating: Number (1-5),
+  createdAt: Date,
+  author: ObjectId (ref: User)
+}
+```
+
+---
+
+## 🔮 Future Enhancements
+
+- [ ] **Search & Filters**: Advanced filtering by price, location, amenities
+- [ ] **Booking System**: Date availability and reservation functionality
+- [ ] **Payment Integration**: Razorpay/Stripe for secure payments
+- [ ] **Geolocation**: Mapbox integration for map view
+- [ ] **Real-time Chat**: Socket.io for host-guest messaging
+- [ ] **Email Notifications**: Nodemailer for booking confirmations
+- [ ] **Mobile App**: React Native version
+- [ ] **Admin Panel**: Content moderation and user management
+- [ ] **Multi-language Support**: Hindi, Tamil, Telugu
+- [ ] **Progressive Web App**: Offline capability with service workers
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome! Please follow these steps:
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+### Contribution Guidelines
+- Follow existing code style and structure
+- Write clear commit messages
+- Test your changes before submitting
+- Update documentation for new features
+
+---
 
 
-🐛 Known Issues & Limitations
+## 👤 Contact
 
-No email verification on signup
-No payment gateway integration (bookings are free)
-Limited search functionality (text-based only)
-No real-time availability checking
-Single image per listing
+**Saurav Arora**
 
-🚀 Future Enhancements
+- GitHub: [@Saurav9463](https://github.com/Saurav9463)
+- Project Link: [https://github.com/Saurav9463/ListingsIndia---Major-Project](https://github.com/Saurav9463/ListingsIndia---Major-Project)
 
- Payment integration (Razorpay/Stripe)
- Email notifications
- Advanced search filters (price range, amenities)
- Multi-image upload per listing
- Calendar view for availability
- Host dashboard with analytics
- Chat/messaging system
- Social authentication (Google, Facebook)
- Email verification
- Password reset functionality
+---
 
+## 🙏 Acknowledgments
 
-👨‍💻 Author
-Saurav Arora
+- [Airbnb](https://www.airbnb.com/) for design inspiration
+- [Bootstrap](https://getbootstrap.com/) for UI components
+- [Cloudinary](https://cloudinary.com/) for image hosting
+- [MongoDB Atlas](https://www.mongodb.com/atlas) for database hosting
+- [Font Awesome](https://fontawesome.com/) for icons
 
-GitHub: @Saurav9463
-Email: sauravarora700@gmail.com
+---
 
-🙏 Acknowledgments
+## 📊 Project Stats
 
-Material-UI for the component library
-Cloudinary for image hosting
-MongoDB Atlas for database hosting
-Inspired by Airbnb
+- **Lines of Code**: ~1000+
+- **Development Time**: 2 months
+- **Models**: 3 (User, Listing, Review)
+- **Routes**: 15+ endpoints
+- **Dependencies**: 14 packages
+
+---
+
+<div align="center">
+
+**⭐ Star this repo if you found it helpful!**
+
+Made with ❤️ by Saurav Arora
+
+</div>
