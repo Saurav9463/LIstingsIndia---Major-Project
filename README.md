@@ -5,6 +5,7 @@
 
 🎯 About :
 ListingsIndia is a comprehensive accommodation booking platform that allows users to discover, book, and review properties across India. Built with modern web technologies, it provides a seamless experience for both property owners and travelers.
+</div>
 Why ListingsIndia?
 
 🔐 Secure Authentication - Industry-standard user authentication and authorization
@@ -13,8 +14,10 @@ Why ListingsIndia?
 ⭐ Reviews & Ratings - Community-driven property reviews
 ❤️ Favorites - Save properties for later viewing
 📱 Responsive Design - Works seamlessly on all devices
+</div>
 
 ✨ Features
+</div>
 🎨 User Experience
 
 ✅ Clean, modern Material-UI interface
@@ -22,15 +25,15 @@ Why ListingsIndia?
 ✅ Real-time form validation
 ✅ Loading states and error handling
 ✅ Intuitive navigation and filtering
-
+</div>
 🔒 Authentication & Security
-
+</div>
 ✅ User registration and login
 ✅ Password hashing with bcrypt
 ✅ Session-based authentication
 ✅ Protected routes and API endpoints
 ✅ Owner-only edit/delete permissions
-
+</div>
 🏠 Listings Management
 
 ✅ Create, read, update, delete (CRUD) operations
@@ -38,7 +41,7 @@ Why ListingsIndia?
 ✅ Search and filter functionality
 ✅ Category-based filtering (trending, mountains, pools, etc.)
 ✅ Price display with tax toggle
-
+</div>
 📅 Booking System
 
 ✅ Date range picker with validation
@@ -46,21 +49,23 @@ Why ListingsIndia?
 ✅ Automatic price calculation (base + service fee + GST)
 ✅ Booking history
 ✅ Cancel bookings
-
+</div>
 ⭐ Reviews & Ratings
 
 ✅ 5-star rating system
 ✅ Text comments
 ✅ Author attribution
 ✅ Delete own reviews
+</div>
 
 ❤️ Favorites
-
+</div>
 ✅ Add/remove properties to favorites
 ✅ Favorites page with all saved listings
 ✅ Badge counter in navigation
 
 🛠 Tech Stack
+</div>
 Backend
 
 Node.js v24.2.0 - JavaScript runtime
@@ -71,7 +76,7 @@ Passport.js - Authentication middleware
 Cloudinary - Cloud-based image storage
 Multer - File upload handling
 Joi - Schema validation
-
+</div>
 Frontend
 
 React 19.2.0 - UI library
@@ -80,7 +85,7 @@ Material-UI (MUI) v7.3.4 - Component library
 React Router v7.9.3 - Client-side routing
 Axios - HTTP client
 Day.js - Date manipulation
-
+</div>
 Additional Tools
 
 CORS - Cross-origin resource sharing
